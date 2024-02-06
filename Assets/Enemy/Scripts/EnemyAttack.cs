@@ -53,7 +53,11 @@ public class EnemyAttack : MonoBehaviour
     void Attack()
     {
         distanceToTarget = Vector3.Distance(playerTransform.position, gunTransform.position);
+
+
+
         attackReady = IsReadyToAttack();
+
         if (distanceToTarget <= maxDistanceToTarget)
         {
             LookAtTarget();
