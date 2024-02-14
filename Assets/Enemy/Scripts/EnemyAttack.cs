@@ -6,17 +6,14 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
-    [SerializeField]
-    Transform playerTransform;
+    [SerializeField] Transform playerTransform;
     Transform gunTransform;
     float maxDistanceToTarget = 6f;
     float distanceToTarget;
 
-    [SerializeField]
-    float rawDamage = 10f;
+    [SerializeField] float rawDamage = 10f;
 
-    [SerializeField]
-    float delayTimer = 2f;
+    [SerializeField] float delayTimer = 2f;
     float tick;
     bool attackReady = true;
 

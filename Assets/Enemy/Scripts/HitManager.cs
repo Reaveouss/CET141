@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class HitManager : MonoBehaviour
 {
-    [SerializeField]
-    float hitPoints = 25;
+    [SerializeField] float hitPoints = 25;
     // Start is called before the first frame update
     void Hit(float rawDamage)
     {

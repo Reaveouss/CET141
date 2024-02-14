@@ -30,7 +30,7 @@ public class ArrowManager : MonoBehaviour
 
     private void OnCollisionEnter(Collision rigidbody)
     {
-        if (rigidbody.gameObject.tag == "Enemysd")
+        if (rigidbody.gameObject.tag == "Enemy")
         {
             Debug.Log("Arrow Hit");
             rigidbody.collider.SendMessageUpwards("Hit", rawDamage, SendMessageOptions.DontRequireReceiver);
