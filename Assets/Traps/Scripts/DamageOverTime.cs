@@ -36,7 +36,7 @@ public class DamageOverTime : MonoBehaviour
     private void OnTriggerStay(Collider collision)
     {
         attackReady = IsReadyToAttack();
-        Debug.Log("OnTriggerEnter Called");
+        
         if (collision.gameObject.tag == "Player")
         {
             Debug.Log("Player detected");

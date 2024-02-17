@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider))]
@@ -69,6 +70,7 @@ public class Item : MonoBehaviour
 
     void Use()
     {
+
         if (isConsumable)
         {
             quantity--;
@@ -78,5 +80,6 @@ public class Item : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+        
     }
 }

@@ -27,4 +27,10 @@ public class HealthManager : MonoBehaviour
             hitPoints = maxHitPoints;
         }
     }
+
+    void Heal(float rawHealing)
+    {
+        hitPoints += rawHealing;
+        Debug.Log("Healed" + hitPoints.ToString());
+    }
 }
