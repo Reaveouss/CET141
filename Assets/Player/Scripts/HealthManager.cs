@@ -1,15 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthManager : MonoBehaviour
 {
-    [SerializeField] float hitPoints = 100f;
+    float hitPoints;
     [SerializeField] float maxHitPoints = 100f;
+
+    public Slider healthSlider;
     // Start is called before the first frame update
+
+    private void Start()
+    {
+        hitPoints = maxHitPoints;
+    }
     void Hit(float rawDamage)
     {
         hitPoints -= rawDamage;
+        SetHealthSlider();
 
         Debug.Log("OUCH: " + hitPoints.ToString());
 
@@ -32,5 +41,18 @@ public class HealthManager : MonoBehaviour
     {
         hitPoints += rawHealing;
         Debug.Log("Healed" + hitPoints.ToString());
+    }
+
+    private void SetHealthSlider()
+    {
+        if (healthSlider != null)
+        {
+            healthSlider.value = NormalisedHitPoints();
+        }
+    }
+
+    float NormalisedHitPoints()
+    {
+        return hitPoints / maxHitPoints;
     }
 }
