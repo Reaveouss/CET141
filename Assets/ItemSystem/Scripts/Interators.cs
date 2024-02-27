@@ -45,7 +45,7 @@ public class Interators : MonoBehaviour
                         Item item = raycastHit.transform.GetComponent<Item>();
                         if (item != null)
                         {
-                            item.Interact();
+                            item.Interact(this.gameObject);
                         }
                     }
                 }

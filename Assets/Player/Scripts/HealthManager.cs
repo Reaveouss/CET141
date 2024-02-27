@@ -40,6 +40,7 @@ public class HealthManager : MonoBehaviour
     void Heal(float rawHealing)
     {
         hitPoints += rawHealing;
+        SetHealthSlider();
         Debug.Log("Healed" + hitPoints.ToString());
     }
 
