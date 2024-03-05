@@ -2,7 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MenuControls : MonoBehaviour
+public class MenuController : MonoBehaviour
 {
     [SerializeField] string playScene = "GameScene";
     [SerializeField] string mainMenuScene = "StartScene";
@@ -12,6 +12,9 @@ public class MenuControls : MonoBehaviour
 
     [Tooltip("Drag in a pause menu panel, if one exists")]
     [SerializeField] GameObject pauseMenuPanel;
+
+    [Tooltip("Grag in a high scores panel, if one exists")]
+    [SerializeField] GameObject highScoresPanel;
 
     [SerializeField] bool IsPauseMenuAvailable = false;
     [HideInInspector] public static bool IsGamePaused = false;
@@ -81,5 +84,14 @@ public class MenuControls : MonoBehaviour
     {
         SceneManager.LoadScene(mainMenuScene);
         Cursor.visible = true;
+    }
+    public void HighScoreMenuClose()
+    {
+        highScoresPanel.SetActive(false);
+    }
+    public void HighScoreMenuOpen()
+    {
+        highScoresPanel.GetComponent<HighScoreSystem>().UpdateHighScoreUI();
+        highScoresPanel.SetActive(true);
     }
 }
