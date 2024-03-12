@@ -18,7 +18,7 @@ public class UIManager : MonoBehaviour
 
     public void UpdateScoreUI(int value)
     {
-        scoreValue.text = value.ToString("D5");
+        scoreValue.text = value.ToString("D1");
     }
 
     public void UpdateTimeUI(float time)
